@@ -43,7 +43,7 @@ public class ${table_name}Controller {
     * 查询一个
     */
     @GetMapping("read/{id}")
-    public ResultModel<${table_name}> get(@PathVariable Long id) {
+    public ResultModel<${table_name}> get(@PathVariable ${primaryKeyType} id) {
         try {
             return ${table_name_small}Service.getById(id);
         } catch (Exception e) {
@@ -86,7 +86,7 @@ public class ${table_name}Controller {
     * 删除
     */
     @PostMapping("/delete/{id}")
-    public ResultModel<Object> delete(@PathVariable Long id) {
+    public ResultModel<Object> delete(@PathVariable ${primaryKeyType} id) {
         try {
             return ${table_name_small}Service.removeById(id);
         } catch (Exception e) {
