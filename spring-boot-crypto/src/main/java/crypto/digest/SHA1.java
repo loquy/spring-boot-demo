@@ -1,7 +1,7 @@
 package crypto.digest;
 
-import crypto.constant.AlgorithmConstant;
 import crypto.Digest;
+import crypto.constant.AlgorithmConstant;
 import crypto.model.Algorithm;
 
 /**

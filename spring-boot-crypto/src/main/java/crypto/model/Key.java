@@ -14,6 +14,27 @@ import java.security.KeyPair;
 public class Key {
 
     /**
+     * 对称加密密钥
+     */
+    private SecretKey secretKey;
+    /**
+     * 非对称加密的公钥和私钥
+     */
+    private KeyPair keyPair;
+    /**
+     * base64密钥
+     */
+    private String base64SecretKey;
+    /**
+     * base64私钥
+     */
+    private String base64PrivateKey;
+    /**
+     * base64公钥
+     */
+    private String base64PublicKey;
+
+    /**
      * Instantiates a new Key.
      *
      * @param secretKey the secret key
@@ -33,31 +54,6 @@ public class Key {
         setBase64PrivateKey(keyPair);
         setBase64PublicKey(keyPair);
     }
-
-    /**
-     * 对称加密密钥
-     */
-    private SecretKey secretKey;
-
-    /**
-     * 非对称加密的公钥和私钥
-     */
-    private KeyPair keyPair;
-
-    /**
-     * base64密钥
-     */
-    private String base64SecretKey;
-
-    /**
-     * base64私钥
-     */
-    private String base64PrivateKey;
-
-    /**
-     * base64公钥
-     */
-    private String base64PublicKey;
 
     /**
      * Gets secret key.
@@ -96,36 +92,19 @@ public class Key {
     }
 
     /**
-     * Sets base 64 secret key.
-     *
-     */
-    public void setBase64SecretKey(SecretKey secretKey) {
-        this.base64SecretKey = Base64.encodeWithoutPadding(secretKey.getEncoded());
-    }
-
-    /**
-     * Sets base 64 private key.
-     *
-     */
-    public void setBase64PrivateKey(KeyPair keyPair) {
-        this.base64PrivateKey = Base64.encodeWithoutPadding(keyPair.getPrivate().getEncoded());
-    }
-
-    /**
-     * Sets base 64 public key.
-     *
-     */
-    public void setBase64PublicKey(KeyPair keyPair) {
-        this.base64PublicKey = Base64.encodeWithoutPadding(keyPair.getPublic().getEncoded());
-    }
-
-    /**
      * Gets base 64 secret key.
      *
      * @return the base 64 secret key
      */
     public String getBase64SecretKey() {
         return base64SecretKey;
+    }
+
+    /**
+     * Sets base 64 secret key.
+     */
+    public void setBase64SecretKey(SecretKey secretKey) {
+        this.base64SecretKey = Base64.encodeWithoutPadding(secretKey.getEncoded());
     }
 
     /**
@@ -138,11 +117,25 @@ public class Key {
     }
 
     /**
+     * Sets base 64 private key.
+     */
+    public void setBase64PrivateKey(KeyPair keyPair) {
+        this.base64PrivateKey = Base64.encodeWithoutPadding(keyPair.getPrivate().getEncoded());
+    }
+
+    /**
      * Gets base 64 public key.
      *
      * @return the base 64 public key
      */
     public String getBase64PublicKey() {
         return base64PublicKey;
+    }
+
+    /**
+     * Sets base 64 public key.
+     */
+    public void setBase64PublicKey(KeyPair keyPair) {
+        this.base64PublicKey = Base64.encodeWithoutPadding(keyPair.getPublic().getEncoded());
     }
 }

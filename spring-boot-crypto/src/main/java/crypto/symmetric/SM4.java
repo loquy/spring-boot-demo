@@ -1,11 +1,10 @@
 package crypto.symmetric;
 
-import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
-import crypto.constant.AlgorithmConstant;
 import crypto.Crypto;
-import crypto.model.Key;
+import crypto.constant.AlgorithmConstant;
 import crypto.model.Algorithm;
+import crypto.model.Key;
 
 /**
  * @author loquy

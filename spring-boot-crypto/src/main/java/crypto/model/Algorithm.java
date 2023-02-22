@@ -6,6 +6,31 @@ package crypto.model;
  */
 public class Algorithm {
 
+    /**
+     * 公开密钥算法
+     */
+    private String pkAlgorithm;
+    /**
+     * 对称加密密钥（DES、DES3、AES、SM4）
+     */
+    private String key;
+    /**
+     * 非对称加密：公钥（公钥加密）
+     */
+    private String publicKey;
+    /**
+     * 非对称加密：私钥（私钥解密）
+     */
+    private String privateKey;
+    /**
+     * 哈希算法
+     */
+    private String hashAlgorithm;
+    /**
+     * 原始数据
+     */
+    private String rawData;
+
     public Algorithm(String pkAlgorithm, String key, String publicKey, String privateKey, String hashAlgorithm, String rawData) {
         this.pkAlgorithm = pkAlgorithm;
         this.key = key;
@@ -14,36 +39,6 @@ public class Algorithm {
         this.hashAlgorithm = hashAlgorithm;
         this.rawData = rawData;
     }
-
-    /**
-     * 公开密钥算法
-     */
-    private String pkAlgorithm;
-
-    /**
-     * 对称加密密钥（DES、DES3、AES、SM4）
-     */
-    private String key;
-
-    /**
-     * 非对称加密：公钥（公钥加密）
-     */
-    private String publicKey;
-
-    /**
-     * 非对称加密：私钥（私钥解密）
-     */
-    private String privateKey;
-
-    /**
-     * 哈希算法
-     */
-    private String hashAlgorithm;
-
-    /**
-     * 原始数据
-     */
-    private String rawData;
 
     public String getPkAlgorithm() {
         return pkAlgorithm;
